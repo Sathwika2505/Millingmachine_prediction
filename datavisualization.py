@@ -15,6 +15,10 @@ for col in copy_df3.columns:
     else:
         numer.append(col)
 
+plt.figure(figsize=(10,8))
+sns.heatmap(copy_df3.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.show()
+
 for x in numer:
         q75,q25 = np.percentile(copy_df3.loc[:,x],[75,25])
         intr_qr = q75-q25 
@@ -37,18 +41,5 @@ for num in numer:
     plt.xlabel(num)
 plt.show()
 # print(df)
-
-# Select columns for correlation
-selected_columns = df.columns
-# selected_columns = ['Type', 'Air temperature [K]', 'Rotational speed [rpm]','Torque [Nm]', 'Tool wear [min]', 'Fail(Y/N)']
-# Calculate the correlation matrix
-correlation_matrix = df[selected_columns].corr()
-# Print the correlation matrix
-print(correlation_matrix)
-# Create a heatmap to visualize correlations
-plt.figure(figsize=(8, 6))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-plt.title('Correlation Matrix Heatmap')
-plt.show()
 
 df = copy_df3
