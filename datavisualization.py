@@ -12,8 +12,8 @@ import plotly.io as pio
 import io
 from PIL import Image
 a =[]
+data = df
 def data_visualization():
-    data = df
     # data.drop(['OTI_A','OTI_T','WTI'], axis=1,inplace=True)
     col=list(data.columns)
     col.remove("Fail(Y/N)")
