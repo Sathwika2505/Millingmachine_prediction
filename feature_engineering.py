@@ -17,5 +17,5 @@ dataset_balanced = pd.concat([Target_1_over,Target_0], axis=0)
 dataset_balanced['Fail(Y/N)'].groupby(dataset_balanced['Fail(Y/N)']).count()
 data = dataset_balanced.copy()
 data = data.reset_index(drop=True)
-data = data.to_csv("predictive_mintenance_artifact.csv", index=False)
+data.to_csv("predictive_mintenance_artifact.csv", index=False)
 df = data
